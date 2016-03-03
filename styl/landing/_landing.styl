@@ -5,6 +5,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 $color_main = #2ECC71
+$color_secondary = #999
 $color_background = #e3e3e3
 
 html
@@ -69,7 +70,7 @@ html
     line-height 18px
     font-size: 14px;
     line-height: 2.7rem;
-    color #999
+    color $color_secondary
 
 /* Notify */
 .notify 
@@ -82,7 +83,8 @@ html
     font-size: 14px;
     line-height: 2.7rem;
     color #999
-
+  &__form__input
+    height 56px !important
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px)
   .hero__app__phone
@@ -97,6 +99,7 @@ html
     max-height 420px
 
 
+
 /* Larger than desktop */
 @media (min-width: 1000px)
   .hero__app__phone
@@ -104,3 +107,125 @@ html
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+.login_bar
+  width 340px
+  height 56px
+  background white
+  border-radius 10px
+  top 50%
+  position relative
+  z-index 1
+  overflow hidden
+  margin 50px 0 75px 0
+
+.login
+  border none
+  background transparent
+  position absolute
+  height 100%
+  width 190px
+  padding-left 10px
+  text-align left
+  line-height 56px
+  vertical-align middle
+  z-index 10
+  -webkit-transition transform 0.2s ease-in-out 0s
+  -moz-transition transform 0.2s ease-in-out 0s
+  -o-transition transform 0.2s ease-in-out 0s
+  transition transform 0.2s ease-in-out 0s
+
+.login_active
+  -webkit-transform translateX(300px)
+  -moz-transform translateX(300px)
+  -ms-transform translateX(300px)
+  -o-transform translateX(300px)
+  transform translateX(300px)
+
+.subscribe_button
+  background $color_main
+  position absolute
+  top -50px
+  left 200px
+  border-top-right-radius 10px
+  border-bottom-right-radius 10px
+  height 150px
+  width 140px
+  text-align center
+  line-height 150px
+  vertical-align middle
+  color white
+  font-size 22px
+  font-weight 400
+  -webkit-transition transform 0.5s ease 0s
+  -moz-transition transform 0.5s ease 0s
+  -o-transition transform 0.5s ease 0s
+  transition transform 0.5s ease 0s
+  &:hover
+    background-color #222A33
+    cursor pointer
+
+.subscribe_button_active
+  -webkit-transform translateY(50px)
+  -moz-transform translateY(50px)
+  -ms-transform translateY(50px)
+  -o-transform translateY(50px)
+  transform translateY(50px)
+
+.subscribing
+  background #CDD4DC
+  height 100%
+  width 300px
+  z-index 5
+  position absolute
+  left -300px
+  display inline-block
+  -webkit-transition transform 1s ease 0s
+  -moz-transition transform 1s ease 0s
+  -o-transition transform 1s ease 0s
+  transition transform 1s ease 0s
+
+.subscribing_active
+  -webkit-transform translateX(300px)
+  -moz-transform translateX(300px)
+  -ms-transform translateX(300px)
+  -o-transform translateX(300px)
+  transform translateX(300px)
+
+.thanks
+  background transparent
+  height 100%
+  width 300px
+  z-index 5
+  text-align left
+  line-height 50px
+  vertical-align middle
+  padding-left 10px
+  position absolute
+  top 50px
+  display inline-block
+  -webkit-transition transform 0.5s ease 0s
+  -moz-transition transform 0.5s ease 0s
+  -o-transition transform 0.5s ease 0s
+  transition transform 0.5s ease 0s
+
+.thanks_active
+  -webkit-transform translateY(-50px)
+  -moz-transform translateY(-50px)
+  -ms-transform translateY(-50px)
+  -o-transform translateY(-50px)
+  transform translateY(-50px)
+
+
+/* Links */
+.foomenu
+  height 132px
+  &__links
+    padding-top 60px
+    text-align center
+  &__link
+    margin 10px 20px 0 0
+    color $color_secondary
+    text-decoration none
+    font-size 16px
+    &:hover
+      color $color_main

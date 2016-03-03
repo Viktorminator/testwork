@@ -82,22 +82,29 @@ get_header(); ?>
       </p>
     </div>
     <div class="row">
-      <form method="post" class="ajax_form" action="">
-        <div class="input-group">
-          <input placeholder="Email Address" type="email" name="email" class="form-control" value="">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-             Notify
-            </button>
-          </span>
+     <div class="container">
+        <div class="login_bar">
+          <input class="login" placeholder="some@email.com">
+          <span class="subscribe_button" onclick="subscribeOnClick()">Notify</span>
+          <span class="subscribing"></span>
+          <span class="thanks"> Thank you. You have been subscribed</span>
         </div>
-   
-        
-      </form>
+      </div>
     </div>
   </div>
 </div>
-
+<div class="section foomenu">
+  <div class="container">
+    <div class="row foomenu__links">
+      <a href="#" class="foomenu__link">Contact</a>
+      <a href="#" class="foomenu__link">Download</a>
+      <a href="#" class="foomenu__link">Press</a>
+      <a href="#" class="foomenu__link">Email</a>
+      <a href="#" class="foomenu__link">Support</a>
+      <a href="#" class="foomenu__link">Privacy Policy</a>
+    </div>
+  </div>
+</div>
 
 
 <?php get_footer(); ?>
