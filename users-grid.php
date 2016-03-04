@@ -5,7 +5,9 @@
  * Date: 3/4/16
  * Time: 5:06 PM
  */
-
+/**
+ * Add widget to top menu in dashboard panel
+ */
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 
 function my_custom_dashboard_widgets() {
@@ -14,6 +16,9 @@ function my_custom_dashboard_widgets() {
     wp_add_dashboard_widget('custom_help_widget', 'Subscribed users', 'subscribers_grid');
 }
 
+/**
+ * Output subscibed users
+ */
 function subscribers_grid() {
     echo '<b>Hi all! This will output the users grid:</b> <br/>';
     showSubscribers();
