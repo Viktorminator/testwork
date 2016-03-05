@@ -20,7 +20,7 @@ function my_custom_dashboard_widgets() {
  * Output subscibed users
  */
 function subscribers_grid() {
-    echo '<b>Hi all! This will output the users grid:</b> <br/>';
+    //echo '<b>Hi all! This will output the users grid:</b> <br/>';
     show_subscribers();
 }
 

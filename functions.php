@@ -111,8 +111,16 @@ function styl_s_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Register script for AJAX form
+	wp_register_script('form', get_template_directory_uri() . '/js/form.js');
+
+	// Enqueue script
+	wp_enqueue_script( 'form' );
+
 }
 add_action( 'wp_enqueue_scripts', 'styl_s_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
@@ -142,3 +150,35 @@ require get_template_directory() . '/inc/jetpack.php';
  * Widget for subscribed users
  */
 include 'users-grid.php';
+
+/**
+ * My AJAX form part
+ */
+wp_enqueue_script('jquery');
+
+
+add_action('wp_ajax_add_subscriber', 'add_subscriber');
+add_action('wp_ajax_nopriv_add_subscriber', 'add_subscriber'); // Add for not logged users
+
+function add_subscriber() {
+
+	global $wpdb;
+
+	$email = $_POST['email'];
+	if (!empty($email)) {
+		if($wpdb->insert('wp_subscribers', array(
+				'email'=>$email
+			))===FALSE){
+			echo "Error";
+		}
+		else {
+			echo "Subscriber with email " . $email . " was succesfully added";
+		}
+	}
+	else {
+		echo "No email was given - no email was added.";
+	}
+	die();
+}
+
+
