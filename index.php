@@ -84,10 +84,12 @@ get_header(); ?>
     <div class="row">
      <div class="container">
         <div class="login_bar">
-          <input class="login" placeholder="some@email.com">
-          <span class="subscribe_button" onclick="subscribeOnClick()">Notify</span>
-          <span class="subscribing"></span>
-          <span class="thanks"> Thank you. You have been subscribed</span>
+            <form action="user-insert.php" >
+              <input class="login" name="email" placeholder="some@email.com">
+              <span class="subscribe_button">Notify</span>
+              <span class="subscribing"></span>
+              <span class="thanks"> Thank you. You have been subscribed</span>
+            </form>
         </div>
       </div>
     </div>

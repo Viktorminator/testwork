@@ -21,10 +21,10 @@ function my_custom_dashboard_widgets() {
  */
 function subscribers_grid() {
     echo '<b>Hi all! This will output the users grid:</b> <br/>';
-    showSubscribers();
+    show_subscribers();
 }
 
-function showSubscribers() {
+function show_subscribers() {
     global $wpdb;
 
     $appTable = $wpdb->prefix . "subscribers";
