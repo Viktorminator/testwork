@@ -85,11 +85,8 @@ get_header(); ?>
      <div class="container">
         <div class="login_bar">
             <form action="add_subscriber" id="notify"  type="post" name="postForm">
-              <input class="login" name="email" placeholder="some@email.com">
+              <input class="login" type="email" name="email" placeholder="some@email.com" required="required">
               <input type="submit" class="subscribe_button" value="Notify"/>
-              <span class="subscribing"></span>
-              <span class="thanks"> Thank you. You have been subscribed</span>
-              <span class="message"></span>
             </form>
         </div>
       </div>

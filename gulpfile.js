@@ -19,7 +19,7 @@ gulp.task('styles', function(){
        sourcemap: { inline: true }
      }))
 	.pipe(autoprefixer({
-			browsers: ['last 2 versions']
+			browsers: ['last 4 versions']
 		}))
 	.pipe(gulp.dest('./'))
 	.pipe(reload({ stream : true }))

@@ -1,12 +1,9 @@
 /**
  * Created by user on 3/5/16.
  */
-$(document).ready(function() {
+function formSend(){
     $('#notify').submit(function(event) { //Trigger on form submit
-        $('.error').empty(); //Clear the messages first
-        $('.success').empty();
-        console.log(window.location.href );
-        //Validate fields if required using jQuery
+
 
         var postForm = { //Fetch form data
             'action'    : 'add_subscriber',
@@ -29,4 +26,18 @@ $(document).ready(function() {
         });
         event.preventDefault(); //Prevent the default submit
     });
+}
+
+function validateEmail(email) {
+    // http://stackoverflow.com/a/46181/11236
+
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+/**
+ * When document is ready, do
+ */
+$(document).ready(function() {
+    formSend();
 });
