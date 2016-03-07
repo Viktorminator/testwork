@@ -549,7 +549,6 @@ html {
 .notify__form {
   width: 100%;
   margin: 50px auto 65px;
-  border: 1px solid #f00;
 }
 .notify__form__login {
   height: 100%;
@@ -575,6 +574,9 @@ html {
   color: #fff;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.notify__form__submit:hover {
+  background-color: #808080;
 }
 @media (min-width: 550px) {
   .hero__app__phone {
