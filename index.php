@@ -106,5 +106,67 @@ get_header(); ?>
   </div>
 </div>
 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-21613008-7', {"cookieDomain":"none"});
+    ga('send', 'pageview');
+
+</script>
+<script>
+    /**
+     * Created by user on 3/5/16.
+     */
+    function formSend(){
+        $('#notify').submit(function(event) { //Trigger on form submit
+
+
+            var postForm = { //Fetch form data
+                'action'    : 'add_subscriber',
+                'email'     : $('input[name=email]').val() //Store name fields value
+            };
+
+            $.ajax({ //Process the form using $.ajax()
+                type      : 'POST', //Method type
+                url       : window.location.href + 'wp-admin/admin-ajax.php', // form processing file URL
+                data      : postForm, //Forms name
+                dataType  : 'json',
+                success: function (resdata) {
+                    alert(resdata.responseText);
+                    ga('send', {   //Subscriber submited send to Google Analytics account
+                        hitType: 'submission',
+                        eventCategory: 'Subscribers',
+                        eventAction: 'submit',
+                        eventLabel: 'Submitted subscriber'
+                    }, {
+                        nonInteraction: true
+                    });
+                },
+                error: function (result, status, err) {
+                    alert(result.responseText);
+                    alert(status.responseText);
+                    alert(err.Message);
+                }
+            });
+            event.preventDefault(); //Prevent the default submit
+        });
+    }
+
+    function validateEmail(email) {
+        // http://stackoverflow.com/a/46181/11236
+
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    /**
+     * When document is ready, do
+     */
+    $(document).ready(function() {
+        formSend();
+    });
+</script>
 <?php get_footer(); ?>
