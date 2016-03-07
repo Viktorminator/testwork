@@ -112,12 +112,6 @@ function styl_s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Register script for AJAX form
-	wp_register_script('form', get_template_directory_uri() . '/js/form.js');
-
-	// Enqueue script
-	wp_enqueue_script( 'form' );
-
 }
 add_action( 'wp_enqueue_scripts', 'styl_s_scripts' );
 

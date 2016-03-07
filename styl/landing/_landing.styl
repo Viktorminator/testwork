@@ -7,10 +7,11 @@
 $color_main = #2ECC71
 $color_secondary = #999
 $color_background = #e3e3e3
+$color_experiment = #c25955
 
 html
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-/* Hero */ 
+/* Hero */
 .hero
   border-top $color_main 10px solid
   background url('./img/header.png')  no-repeat top center
@@ -30,7 +31,7 @@ html
     margin-top 27px
     padding-bottom 167px
   &__app__phone
-    position absolute 
+    position absolute
     bottom 0
     visibility hidden
 /* Icons */
@@ -56,9 +57,9 @@ html
     background-position 0 -252px
     &:hover
       background-position 0 -315px
-      
+
 /* Value */
-.value 
+.value
   text-align center
   padding 60px 0 45px 0
   &__heading
@@ -73,7 +74,7 @@ html
     color $color_secondary
 
 /* Notify */
-.notify 
+.notify
   background-color $color_background
   &__header
     padding-top 62px
@@ -158,65 +159,11 @@ html
   color white
   font-size 22px
   font-weight 400
-  -webkit-transition transform 0.5s ease 0s
-  -moz-transition transform 0.5s ease 0s
-  -o-transition transform 0.5s ease 0s
-  transition transform 0.5s ease 0s
   &:hover
     background-color #222A33
     cursor pointer
-
-.subscribe_button_active
-  -webkit-transform translateY(50px)
-  -moz-transform translateY(50px)
-  -ms-transform translateY(50px)
-  -o-transform translateY(50px)
-  transform translateY(50px)
-
-.subscribing
-  background #CDD4DC
-  height 100%
-  width 300px
-  z-index 5
-  position absolute
-  left -300px
-  display inline-block
-  -webkit-transition transform 1s ease 0s
-  -moz-transition transform 1s ease 0s
-  -o-transition transform 1s ease 0s
-  transition transform 1s ease 0s
-
-.subscribing_active
-  -webkit-transform translateX(300px)
-  -moz-transform translateX(300px)
-  -ms-transform translateX(300px)
-  -o-transform translateX(300px)
-  transform translateX(300px)
-
-.thanks
-  background transparent
-  height 100%
-  width 300px
-  z-index 5
-  text-align left
-  line-height 50px
-  vertical-align middle
-  padding-left 10px
-  position absolute
-  top 50px
-  display inline-block
-  -webkit-transition transform 0.5s ease 0s
-  -moz-transition transform 0.5s ease 0s
-  -o-transition transform 0.5s ease 0s
-  transition transform 0.5s ease 0s
-
-.thanks_active
-  -webkit-transform translateY(-50px)
-  -moz-transform translateY(-50px)
-  -ms-transform translateY(-50px)
-  -o-transform translateY(-50px)
-  transform translateY(-50px)
-
+  &.button_experiment
+    background-color $color_experiment !important
 
 /* Links */
 .foomenu
