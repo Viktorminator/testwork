@@ -22,31 +22,6 @@ get_header(); ?>
     ga('send', 'pageview');
 
 </script>
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-        k='51186737-2',d=document,l=d.location,c=d.cookie;
-        if(l.search.indexOf('utm_expid='+k)>0)return;
-        function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-            indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-                '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-                valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-
-
-<!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=74yA5l68R-SyVc4xEG3vMA"></script>
-
-<script>
-    // Ask Google Analytics which variation to show the user.
-    var chosenVariation = cxApi.chooseVariation();
-</script>
-
-
 <div class="section hero">
   <div class="container">
     <div class="row">
@@ -114,16 +89,13 @@ get_header(); ?>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla nisl congue congue. Maecenas nec condimentum libero, at elementum mauris. Phasellus eget nisi dapibus, ultricies nisl at, hendrerit risusuis ornare luctus id sollicitudin ante lobortis at.
       </p>
     </div>
-    <div class="row">
-     <div class="container">
-        <div class="login_bar">
-            <form action="add_subscriber" id="notify"  type="post" name="postForm">
-              <input class="login" type="email" name="email" placeholder="some@email.com" required="required">
-              <input type="submit" class="subscribe_button" id="subscribe_button" value="Notify"/>
+      <div class="row">
+            <form action="add_subscriber" id="notify"  type="post" name="postForm" class="notify__form">
+              <input class="notify__form__login" type="email" name="email" placeholder="Email Address" required="required">
+              <input type="submit" class="notify__form__submit" id="subscribe_button" value="Notify"/>
             </form>
-        </div>
       </div>
-    </div>
+    
   </div>
 </div>
 <div class="section foomenu">
@@ -191,14 +163,16 @@ get_header(); ?>
      */
     $(document).ready(function() {
         // Define JavaScript for each page variation of this experiment.
-        var pageVariations = [
-            function() {},  // Original: Do nothing. This will render the default HTML.
-            function() {    // Variation 2: Button Color
-                document.getElementById('subscribe_button').className = 'button_experiment';
-            }
-        ];
+        /*
+         var pageVariations = [
+         function() {},  // Original: Do nothing. This will render the default HTML.
+         function() {    // Variation 2: Button Color
+         document.getElementById('subscribe_button').className = 'button_experiment';
+         }
+         ];
+         */
         formSend();
-        pageVariations[chosenVariation]
+        // pageVariations[chosenVariation]
     });
 </script>
 <?php get_footer(); ?>

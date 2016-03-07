@@ -546,6 +546,36 @@ html {
 .notify__form__input {
   height: 56px !important;
 }
+.notify__form {
+  width: 100%;
+  margin: 50px auto 65px;
+  border: 1px solid #f00;
+}
+.notify__form__login {
+  height: 100%;
+  width: 100%;
+  height: 55px;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+.notify__form__submit {
+  height: 55px;
+  width: 100%;
+  border-radius: 15px;
+  margin: 10px 0;
+  background-color: #2ecc71;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
 @media (min-width: 550px) {
   .hero__app__phone {
     max-width: 50%;
@@ -554,6 +584,22 @@ html {
   }
   .notify__description {
     width: 100%;
+  }
+  .notify__form {
+    height: 55px;
+    max-width: 445px;
+  }
+  .notify__form__submit {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 25%;
+    margin: 0;
+  }
+  .notify__form__login {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 75%;
+    float: left;
   }
 }
 @media (min-width: 750px) {
@@ -565,101 +611,6 @@ html {
   .hero__app__phone {
     max-height: 505px;
   }
-}
-.login_bar {
-  width: 340px;
-  height: 55px;
-  background: #fff;
-  border-radius: 10px;
-  top: 50%;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin: auto;
-  margin-bottom: 50px;
-}
-.login {
-  border: none;
-  background: transparent;
-  position: absolute;
-  height: 100%;
-  width: 190px;
-  padding-left: 10px;
-  text-align: left;
-  line-height: 56px;
-  vertical-align: middle;
-  z-index: 10;
-  transition: -webkit-transform 0.2s ease-in-out 0s;
-  transition: transform 0.2s ease-in-out 0s;
-}
-.login_active {
-  -webkit-transform: translateX(300px);
-  -ms-transform: translateX(300px);
-  transform: translateX(300px);
-}
-.subscribe_button {
-  background: #2ecc71;
-  position: absolute;
-  top: -48px;
-  left: 200px;
-  border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  height: 150px;
-  width: 140px;
-  text-align: center;
-  line-height: 150px;
-  vertical-align: middle;
-  color: #fff;
-  font-size: 22px;
-  font-weight: 400;
-  transition: -webkit-transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s;
-}
-.subscribe_button:hover {
-  background-color: #222a33;
-  cursor: pointer;
-}
-.subscribe_button_active {
-  -webkit-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-  transform: translateY(50px);
-}
-.subscribing {
-  background: #cdd4dc;
-  height: 100%;
-  width: 300px;
-  z-index: 5;
-  position: absolute;
-  left: -300px;
-  display: inline-block;
-  transition: -webkit-transform 1s ease 0s;
-  transition: transform 1s ease 0s;
-}
-.subscribing_active {
-  -webkit-transform: translateX(300px);
-  -ms-transform: translateX(300px);
-  transform: translateX(300px);
-}
-.thanks {
-  background: transparent;
-  height: 100%;
-  width: 300px;
-  z-index: 5;
-  text-align: left;
-  line-height: 50px;
-  vertical-align: middle;
-  padding-left: 10px;
-  position: absolute;
-  top: 50px;
-  display: inline-block;
-  transition: -webkit-transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s;
-}
-.thanks_active {
-  -webkit-transform: translateY(-50px);
-  -ms-transform: translateY(-50px);
-  transform: translateY(-50px);
 }
 .foomenu {
   height: 132px;
